@@ -1,0 +1,225 @@
+{
+    "course_name": "算法设计与分析",
+    "chapter_id": "ch03",
+    "chapter_title": "动态规划",
+    "summary": "本章介绍了动态规划（DP）的基本概念、基本要素、求解步骤及其应用。首先通过Fibonacci数列的递归与自底向上求解对比，引出DP的核心思想：分治与解决冗余。阐述了DP的三大基本要素：最优子结构、子问题重叠和自底向上求解。详细讲解了DP的四个求解步骤：分析最优子结构、递归定义最优值、自底向上计算最优值并记录信息、构造最优解。然后通过多个经典问题深入讲解DP的应用：最长公共子序列（LCS）问题，包括最优子结构证明、递归关系、DP算法及构造解；矩阵连乘问题，包括最优子结构、递归关系、DP算法、备忘录方法及时间空间复杂度分析；0-1背包问题，包括最优子结构、递归关系、DP算法、改进的跳跃点算法；凸多边形最优三角剖分问题，包括与矩阵连乘的类比、最优子结构、递归关系；最优二叉查找树问题，包括概念、最优子结构、递归关系；最后补充了所有点对的最短路径问题（Floyd算法）。",
+    "knowledge_points": [
+        {
+            "id": "kp001",
+            "name": "动态规划的基本思想：分治与解决冗余",
+            "type": "concept",
+            "importance": "core",
+            "description": "动态规划将原问题分解为更小的子问题，并保存子问题的解以避免重复计算。其核心是分治思想与解决冗余：分治将问题分解为子问题，解决冗余通过填表存储子问题解，后续直接查表，从而降低时间复杂度。"
+        },
+        {
+            "id": "kp002",
+            "name": "动态规划与分治法的异同",
+            "type": "concept",
+            "importance": "core",
+            "description": "相同点：都基于分治思想，将问题分解为子问题。不同点：分治法中子问题相互独立，而动态规划允许子问题重叠，通过保存子问题解避免重复计算，因此动态规划更高效。"
+        },
+        {
+            "id": "kp003",
+            "name": "最优子结构性质",
+            "type": "concept",
+            "importance": "core",
+            "description": "问题的最优解包含其子问题的最优解。这是动态规划的基础，通常用反证法证明。基于最优子结构可以导出递归公式或动态规划方程，从而求解问题。"
+        },
+        {
+            "id": "kp004",
+            "name": "子问题重叠性质",
+            "type": "concept",
+            "importance": "core",
+            "description": "求解过程中，有些子问题被多次求解。动态规划利用此性质，第一次求解后保存结果，后续直接查表，避免重复计算，提高效率。该性质不是必要条件，但若无此性质，动态规划无优势。"
+        },
+        {
+            "id": "kp005",
+            "name": "自底向上的求解方法",
+            "type": "concept",
+            "importance": "core",
+            "description": "动态规划通常采用自底向上的方式求解：先求解最小子问题（停止条件），然后逐步求解更大子问题，直至得到原问题解。这种方法避免了递归的重复计算，通常使用表格存储中间结果。"
+        },
+        {
+            "id": "kp006",
+            "name": "动态规划的求解步骤",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "步骤：1. 分析最优解的结构特征，判断是否具备最优子结构；2. 递归定义最优值，建立递归公式（含停止条件和递归体）；3. 自底向上计算最优值，并记录相关信息（如决策）；4. 根据记录的信息构造最优解。"
+        },
+        {
+            "id": "kp007",
+            "name": "备忘录方法",
+            "type": "algorithm",
+            "importance": "important",
+            "description": "备忘录方法是动态规划的变形，采用自顶向下的递归方式，同时保存已解子问题的值（备忘录），避免重复计算。与动态规划的区别在于控制结构：备忘录是递归，动态规划是迭代。"
+        },
+        {
+            "id": "kp008",
+            "name": "最长公共子序列（LCS）问题定义",
+            "type": "concept",
+            "importance": "core",
+            "description": "给定两个序列X和Y，找出一个最长的公共子序列（不要求连续）。子序列是原序列中删除若干元素后得到的序列。LCS问题不唯一，只需找出一个即可。"
+        },
+        {
+            "id": "kp009",
+            "name": "LCS问题的最优子结构",
+            "type": "difficulty",
+            "importance": "core",
+            "description": "设X和Y的LCS为Z，若xm=yn，则zk=xm=yn且Zk-1是Xm-1和Yn-1的LCS；若xm≠yn且zk≠xm，则Z是Xm-1和Y的LCS；若xm≠yn且zk≠yn，则Z是X和Yn-1的LCS。该性质可用反证法证明。"
+        },
+        {
+            "id": "kp010",
+            "name": "LCS问题的递归关系",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "用c[i][j]表示Xi和Yj的LCS长度。当i=0或j=0时，c[i][j]=0；若xi=yj，则c[i][j]=c[i-1][j-1]+1；否则c[i][j]=max(c[i-1][j], c[i][j-1])。该递归式基于最优子结构。"
+        },
+        {
+            "id": "kp011",
+            "name": "LCS问题的DP算法",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "算法步骤：初始化c[0][j]=0和c[i][0]=0；双重循环填充c[i][j]和b[i][j]（记录来源）；最后根据b构造LCS。时间复杂度O(mn)，空间复杂度O(mn)。"
+        },
+        {
+            "id": "kp012",
+            "name": "LCS问题的构造解",
+            "type": "algorithm",
+            "importance": "important",
+            "description": "根据b数组（记录来源）递归构造LCS：若b[i][j]=1，则输出xi并递归(i-1,j-1)；若b[i][j]=3，则递归(i-1,j)；若b[i][j]=2，则递归(i,j-1)。时间复杂度O(m+n)。"
+        },
+        {
+            "id": "kp013",
+            "name": "矩阵连乘问题定义",
+            "type": "concept",
+            "importance": "core",
+            "description": "给定n个矩阵{A1,...,An}，Ai的维数为pi-1×pi，求完全加括号方式使得数乘次数最少。不同加括号方式对应不同计算次序，数乘次数差异很大。"
+        },
+        {
+            "id": "kp014",
+            "name": "矩阵连乘问题的最优子结构",
+            "type": "difficulty",
+            "importance": "core",
+            "description": "计算A[i:j]的最优次序包含的子链A[i:k]和A[k+1:j]的次序也是最优的。可用反证法证明：若子链不是最优，则存在更优次序替换，导致原问题更优，矛盾。"
+        },
+        {
+            "id": "kp015",
+            "name": "矩阵连乘问题的递归关系",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "设m[i][j]为A[i:j]的最少数乘次数，当i=j时m[i][j]=0；当i<j时，m[i][j]=min_{i≤k<j} {m[i][k]+m[k+1][j]+pi-1 pk pj}。其中k为划分点。"
+        },
+        {
+            "id": "kp016",
+            "name": "矩阵连乘问题的DP算法",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "按链长l从2到n递增，对每个i计算j=i+l-1，遍历k从i到j-1，更新m[i][j]和s[i][j]（记录最优k）。时间复杂度O(n^3)，空间复杂度O(n^2)。"
+        },
+        {
+            "id": "kp017",
+            "name": "矩阵连乘问题的备忘录方法",
+            "type": "algorithm",
+            "importance": "important",
+            "description": "自顶向下递归，使用备忘录m[i][j]存储已计算结果。若m[i][j]>0则直接返回，否则递归计算并保存。时间复杂度O(n^3)，空间复杂度O(n^2)。"
+        },
+        {
+            "id": "kp018",
+            "name": "0-1背包问题定义",
+            "type": "concept",
+            "importance": "core",
+            "description": "给定n个物品，每个物品i有重量wi和价值vi，背包容量W，每个物品只能选或不选（0-1决策），求总价值最大的装入方案。约束为总重量不超过W。"
+        },
+        {
+            "id": "kp019",
+            "name": "0-1背包问题的最优子结构",
+            "type": "difficulty",
+            "importance": "core",
+            "description": "设(x1,...,xn)是最优解，则(x2,...,xn)是子问题（容量W-w1x1，物品2..n）的最优解。可用反证法证明：若子问题有更优解，则原问题可得到更优解，矛盾。"
+        },
+        {
+            "id": "kp020",
+            "name": "0-1背包问题的递归关系",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "设C[i][j]表示前i个物品在容量j下的最大价值。当i=0或j=0时C[i][j]=0；若j<wi，则C[i][j]=C[i-1][j]；否则C[i][j]=max(C[i-1][j], C[i-1][j-wi]+vi)。"
+        },
+        {
+            "id": "kp021",
+            "name": "0-1背包问题的DP算法",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "初始化C[0][j]=0和C[i][0]=0；双重循环i从1到n，j从1到W，按递归关系填充C[i][j]。时间复杂度O(nW)，空间复杂度O(nW)。"
+        },
+        {
+            "id": "kp022",
+            "name": "0-1背包问题的构造解",
+            "type": "algorithm",
+            "importance": "important",
+            "description": "从C[n][W]开始回溯：若C[i][j]==C[i-1][j]，则xi=0；否则xi=1，j=j-wi。重复直到i=0。时间复杂度O(n)。"
+        },
+        {
+            "id": "kp023",
+            "name": "0-1背包问题的改进算法（跳跃点）",
+            "type": "algorithm",
+            "importance": "extended",
+            "description": "利用C[i][j]是阶梯状单调非减函数，只记录跳跃点（j, C[i][j]）以减少存储和计算。通过合并p[i-1]和q[i-1]（p[i-1]每个点加(wi,vi)）并剔除受控点得到p[i]。时间复杂度O(min(nW, 2^n))。"
+        },
+        {
+            "id": "kp024",
+            "name": "背包问题（分数背包）与贪心法",
+            "type": "concept",
+            "importance": "important",
+            "description": "分数背包允许物品部分装入，具有贪心选择性质：按单位价值降序选择物品，尽可能多装直至背包满。贪心法时间复杂度O(nlogn)，可得到最优解。"
+        },
+        {
+            "id": "kp025",
+            "name": "凸多边形最优三角剖分问题定义",
+            "type": "concept",
+            "importance": "important",
+            "description": "给定凸多边形及定义在边和弦上的权函数，求一种三角剖分（将多边形分割成互不相交的三角形），使得所有三角形权值之和最小。权函数常定义为三角形周长或边长之和。"
+        },
+        {
+            "id": "kp026",
+            "name": "凸多边形最优三角剖分的最优子结构",
+            "type": "difficulty",
+            "importance": "core",
+            "description": "设v0vkvn是最优剖分中的一条弦，则子多边形{v0,...,vk}和{vk,...,vn}的剖分也是最优的。可用反证法证明：若子剖分不是最优，则存在更优剖分替换，导致整体更优，矛盾。"
+        },
+        {
+            "id": "kp027",
+            "name": "凸多边形最优三角剖分的递归关系",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "设m[i][j]表示子多边形vi-1...vj的最优三角剖分权值和。当i=j时m[i][j]=0；当i<j时，m[i][j]=min_{i≤k<j} {m[i][k]+m[k+1][j]+w(vi-1, vk, vj)}。"
+        },
+        {
+            "id": "kp028",
+            "name": "最优二叉查找树（OBST）问题定义",
+            "type": "concept",
+            "importance": "important",
+            "description": "给定有序关键字集合S={s1,...,sn}及查找概率pi，以及虚结点e0,...,en及概率qi，构造一棵二叉查找树，使得平均比较次数（期望查找代价）最小。"
+        },
+        {
+            "id": "kp029",
+            "name": "OBST的最优子结构",
+            "type": "difficulty",
+            "importance": "core",
+            "description": "若T(1,n)是OBST，根为sk，则左子树T(1,k-1)和右子树T(k+1,n)也必须是OBST。可用反证法证明：若子树不是最优，则替换后整体代价更小，矛盾。"
+        },
+        {
+            "id": "kp030",
+            "name": "OBST的递归关系",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "设e[i][j]为子树T(i,j)的最小平均比较次数，w[i][j]为子树概率和。当i>j时e[i][j]=0；否则e[i][j]=min_{i≤k≤j} {e[i][k-1]+e[k+1][j]+w[i][j]}，其中w[i][j]=w[i][j-1]+pj+qj。"
+        },
+        {
+            "id": "kp031",
+            "name": "所有点对的最短路径问题（Floyd算法）",
+            "type": "algorithm",
+            "importance": "core",
+            "description": "给定有向图，边有非负长度，求每对顶点间的最短路径长度。Floyd算法通过动态规划迭代：D^k[i][j] = min(D^{k-1}[i][j], D^{k-1}[i][k] + D^{k-1}[k][j])。时间复杂度Θ(n^3)，空间复杂度Θ(1)（原地更新）。"
+        }
+    ]
+}
