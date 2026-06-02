@@ -3,7 +3,7 @@
 ## 环境要求
 
 - Python 3.8+
-- 依赖包：`pip install PyQt5 anthropic python-pptx PyPDF2 matplotlib`
+- 依赖包：`pip install PyQt5 openai python-pptx PyPDF2 matplotlib qtawesome`
 
 ## 配置 API Key
 
