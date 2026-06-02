@@ -1,0 +1,21 @@
+{
+  "student_id": "2026004",
+  "student_name": "刷轮数样例",
+  "course_name": "算法设计与分析",
+  "chapter_id": "ch03",
+  "task_id": "task002",
+  "dialogues": [
+    {"round": 1, "student_input": "请解释动态规划。", "model_output": "动态规划通过保存重复子问题结果提高效率。"},
+    {"round": 2, "student_input": "继续解释。", "model_output": "它通常包含状态定义、转移方程和边界条件。"},
+    {"round": 3, "student_input": "继续解释。", "model_output": "常见例子包括矩阵连乘、背包和LCS。"},
+    {"round": 4, "student_input": "继续解释。", "model_output": "动态规划适合具有最优子结构和重叠子问题的任务。"},
+    {"round": 5, "student_input": "继续解释。", "model_output": "备忘录方法是自顶向下的实现。"},
+    {"round": 6, "student_input": "继续解释。", "model_output": "表格法是自底向上的实现。"},
+    {"round": 7, "student_input": "继续解释。", "model_output": "二者都可以避免重复计算。"},
+    {"round": 8, "student_input": "继续解释。", "model_output": "矩阵连乘可以用区间DP求解。"},
+    {"round": 9, "student_input": "继续解释。", "model_output": "LCS可以用二维表记录最优长度。"},
+    {"round": 10, "student_input": "继续解释。", "model_output": "0-1背包可以比较选与不选两种情况。"}
+  ],
+  "final_report": "动态规划可以保存重复子问题结果，包括矩阵连乘、LCS和背包等问题。",
+  "reflection": ""
+}

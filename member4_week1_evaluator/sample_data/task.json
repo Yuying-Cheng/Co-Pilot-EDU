@@ -1,0 +1,163 @@
+{
+    "course_name": "算法设计与分析",
+    "chapter_id": "ch03",
+    "chapter_title": "动态规划",
+    "tasks": [
+        {
+            "task_id": "task001",
+            "title": "动态规划核心思想与求解框架整理",
+            "task_type": "知识整理",
+            "related_knowledge_points": [
+                "kp001",
+                "kp003",
+                "kp004",
+                "kp005",
+                "kp006"
+            ],
+            "description": "请你系统梳理动态规划的基本思想、三大基本要素（最优子结构、子问题重叠、自底向上求解）以及标准的四个求解步骤。要求结合Fibonacci数列等简单例子说明从递归到自底向上填表的过程，并阐释每个步骤的意义。最终整理成一篇逻辑清晰的知识笔记。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task002",
+            "title": "动态规划、分治法与备忘录方法的算法比较",
+            "task_type": "算法比较",
+            "related_knowledge_points": [
+                "kp002",
+                "kp007",
+                "kp016",
+                "kp017"
+            ],
+            "description": "请从设计思想、子问题关系、求解方式（递归/迭代）、时间复杂度和空间复杂度等维度，全面比较动态规划与分治法的异同，并进一步比较自底向上动态规划与备忘录方法的联系与区别。以矩阵连乘问题为例，给出两种具体实现并分析其性能差异。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task003",
+            "title": "经典动态规划问题的复杂度分析",
+            "task_type": "复杂度分析",
+            "related_knowledge_points": [
+                "kp011",
+                "kp016",
+                "kp017",
+                "kp021",
+                "kp023",
+                "kp031"
+            ],
+            "description": "请针对最长公共子序列(LCS)、矩阵连乘、0-1背包和Floyd算法这四个动态规划问题，详细分析各自的时间复杂度和空间复杂度。要求说明推导过程，并特别对比0-1背包问题朴素DP与跳跃点改进算法的时间复杂度差异，探讨在什么情况下跳跃点算法更具优势。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task004",
+            "title": "LCS与0-1背包问题的案例分析",
+            "task_type": "案例分析",
+            "related_knowledge_points": [
+                "kp008",
+                "kp009",
+                "kp010",
+                "kp011",
+                "kp012",
+                "kp018",
+                "kp019",
+                "kp020",
+                "kp021",
+                "kp022"
+            ],
+            "description": "选取最长公共子序列(LCS)和0-1背包问题作为典型案例，请你分别给出详细的最优子结构证明、递归关系推导、DP表格填充过程以及最优解的构造步骤。用具体序列（如X='ABCBDAB', Y='BDCABA'）和具体物品数据演示算法运行过程，并分析每一步的决策。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task005",
+            "title": "动态规划的适用条件与局限性批判思考",
+            "task_type": "批判思考",
+            "related_knowledge_points": [
+                "kp003",
+                "kp004",
+                "kp005",
+                "kp024",
+                "kp023",
+                "kp031"
+            ],
+            "description": "请结合最优子结构和子问题重叠两个核心性质，批判性地讨论动态规划的适用条件：如果没有子问题重叠性质，使用动态规划是否还有意义？如果问题不具备最有子结构，能否强行使用DP？并将0-1背包问题与分数背包问题对比，讨论动态规划与贪心算法的选择边界。最后，结合跳跃点算法和Floyd算法的局限性，谈谈动态规划可能遇到的时间和空间瓶颈。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true
+            },
+            "editable": true
+        }
+    ]
+}
