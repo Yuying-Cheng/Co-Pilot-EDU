@@ -1,0 +1,37 @@
+{
+  "course_name": "算法设计与分析",
+  "chapter_id": "ch03_demo",
+  "chapter_title": "分治法",
+  "summary": "本章主要介绍分治法的基本思想、递归结构、归并排序、快速排序及复杂度分析。",
+  "knowledge_points": [
+    {
+      "id": "kp001",
+      "name": "分治法基本思想",
+      "type": "concept",
+      "importance": "core",
+      "description": "将原问题分解为若干规模较小的子问题，分别求解后合并结果。"
+    },
+    {
+      "id": "kp002",
+      "name": "归并排序",
+      "type": "algorithm",
+      "importance": "core",
+      "description": "典型分治算法，包括划分、递归排序和合并三个步骤。"
+    },
+    {
+      "id": "kp003",
+      "name": "快速排序",
+      "type": "algorithm",
+      "importance": "core",
+      "description": "通过基准元素划分数组，递归排序子数组。"
+    },
+    {
+      "id": "kp004",
+      "name": "时间复杂度分析",
+      "type": "difficulty",
+      "importance": "important",
+      "description": "利用递推关系分析分治算法的时间复杂度。"
+    }
+  ],
+  "created_at": "2026-06-01T08:35:01.390643"
+}
