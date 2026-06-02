@@ -1,0 +1,208 @@
+{
+    "course_name": "算法设计与分析",
+    "chapter_id": "ch03",
+    "chapter_title": "动态规划",
+    "tasks": [
+        {
+            "task_id": "task001",
+            "title": "构建动态规划知识体系图谱",
+            "task_type": "知识体系整理",
+            "related_knowledge_points": [
+                "kp001",
+                "kp003",
+                "kp004",
+                "kp005",
+                "kp006"
+            ],
+            "description": "请围绕动态规划的核心思想与基本要素，自主构建本章的知识体系图谱。你需要首先用自己的话解释“分治与解决冗余”的关系，然后阐述最优子结构、子问题重叠和自底向上求解三个性质之间的内在逻辑。在此基础上，将动态规划的四个求解步骤与这些性质对应起来，说明每一步如何依赖相关性质。最后，用表格或思维导图的形式展示这些概念之间的联系与区别。在此过程中，你可以向AI提问，请求对某个概念举例或辨析，AI会通过追问引导你深化理解，直到你能完整、准确地表达出知识之间的层级与脉络。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true,
+                "need_socratic_dialogue": false
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true,
+                "required_outputs": [
+                    "知识总结",
+                    "交互记录",
+                    "学习反思"
+                ]
+            },
+            "quality_check": {
+                "must_cover_core_knowledge": true,
+                "must_match_inquiry_learning": true,
+                "must_match_interaction_requirements": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task002",
+            "title": "比较动态规划、分治法与备忘录方法",
+            "task_type": "算法比较",
+            "related_knowledge_points": [
+                "kp002",
+                "kp007",
+                "kp001"
+            ],
+            "description": "选择至少两个具体问题（例如Fibonacci数列与矩阵连乘），分别使用纯分治、标准动态规划（自底向上）和备忘录方法（自顶向下）进行求解与分析。你需要比较三者在思想上的异同、递归/迭代的控制结构差异，以及它们在时间复杂度、空间复杂度和实现难度上的优劣。在交互中，你要提出自己的初步判断，然后通过AI的反问和追问，检验你的结论是否在边界条件下仍然成立。例如，当子问题重叠度很低时，三种方法的效率会怎样变化？最终你要用对比表格和文字总结，形成一份系统性的比较报告。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true,
+                "need_socratic_dialogue": false
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true,
+                "required_outputs": [
+                    "知识总结",
+                    "交互记录",
+                    "学习反思"
+                ]
+            },
+            "quality_check": {
+                "must_cover_core_knowledge": true,
+                "must_match_inquiry_learning": true,
+                "must_match_interaction_requirements": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task003",
+            "title": "深入探究矩阵连乘与0-1背包问题的复杂度",
+            "task_type": "复杂度分析",
+            "related_knowledge_points": [
+                "kp016",
+                "kp021",
+                "kp023",
+                "kp017"
+            ],
+            "description": "以矩阵连乘问题和0-1背包问题为例，深入分析它们的时间复杂度和空间复杂度。你要完成以下工作：推导标准DP算法和备忘录方法的复杂度表达式，并说明推导过程；对于0-1背包问题，进一步分析改进的跳跃点算法的复杂度，并与标准DP进行比较。在交互中，你需要主动提出关于复杂度的猜想，例如“当n远大于W时，跳跃点算法是否总是更优？”，然后由AI通过引导性问题帮助你验证或修正猜想。最后，归纳影响DP算法复杂度的关键参数，并总结在不同数据特征下应如何选择DP变体。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true,
+                "need_socratic_dialogue": false
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true,
+                "required_outputs": [
+                    "知识总结",
+                    "交互记录",
+                    "学习反思"
+                ]
+            },
+            "quality_check": {
+                "must_cover_core_knowledge": true,
+                "must_match_inquiry_learning": true,
+                "must_match_interaction_requirements": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task004",
+            "title": "批判审视动态规划的适用边界",
+            "task_type": "批判思考",
+            "related_knowledge_points": [
+                "kp003",
+                "kp004",
+                "kp024",
+                "kp001"
+            ],
+            "description": "本次任务中，AI将扮演苏格拉底式追问者的角色，引导你批判性地思考动态规划的适用条件与局限性。你将面对一系列层层递进的问题，例如：“所有具备最优子结构的问题都适合用DP吗？”“子问题重叠性质是必须的吗？如果子问题重叠很少，DP还有优势吗？”“0-1背包与分数背包的差别如何影响算法的选择？”“什么情况下贪心法会优于DP？”你需要对每个问题进行思考并给出回答，AI会根据你的回答继续追问，直到你发现自己的知识盲点或逻辑漏洞。整个对话过程将推动你自己总结出适用于动态规划的充分必要条件、DP与贪心法的分野，以及在实际问题中如何做出明智的选择。最终，你需要在对话结束后撰写一段反思性的结论，阐明你对DP适用边界的新认识。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true,
+                "need_socratic_dialogue": true
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true,
+                "required_outputs": [
+                    "知识总结",
+                    "交互记录",
+                    "学习反思"
+                ]
+            },
+            "quality_check": {
+                "must_cover_core_knowledge": true,
+                "must_match_inquiry_learning": true,
+                "must_match_interaction_requirements": true
+            },
+            "editable": true
+        },
+        {
+            "task_id": "task005",
+            "title": "反思动态规划学习历程与迁移能力",
+            "task_type": "学习反思",
+            "related_knowledge_points": [
+                "kp006",
+                "kp008",
+                "kp013",
+                "kp018",
+                "kp031"
+            ],
+            "description": "回顾你在本章学习动态规划的全部过程，从最初接触基本思想，到逐步掌握LCS、矩阵连乘、0-1背包、最优BST和Floyd算法。请梳理出你遇到的难点、理解转折点和仍存的疑惑。然后，将动态规划的求解步骤和思想尝试迁移到一个教材未详细讲解的新问题上（例如字符串编辑距离问题，或你自选的一个类似问题），说明你将如何分析其最优子结构、建立递归关系并设计DP算法。在与AI交互时，你可以提出自己的反思和困惑，AI会以追问的形式帮助你澄清思路，进一步挖掘深层理解。最终，形成一份包含学习路径总结、难点突破和迁移应用尝试的学习反思报告。",
+            "interaction_requirements": {
+                "min_rounds": 10,
+                "required_types": [
+                    "询问",
+                    "表达见解",
+                    "审辨",
+                    "猜想"
+                ],
+                "must_include_follow_up": true,
+                "must_include_questioning": true,
+                "need_socratic_dialogue": false
+            },
+            "output_requirements": {
+                "word_limit": "500-800字",
+                "need_dialogue_record": true,
+                "need_learning_reflection": true,
+                "required_outputs": [
+                    "知识总结",
+                    "交互记录",
+                    "学习反思"
+                ]
+            },
+            "quality_check": {
+                "must_cover_core_knowledge": true,
+                "must_match_inquiry_learning": true,
+                "must_match_interaction_requirements": true
+            },
+            "editable": true
+        }
+    ]
+}
