@@ -1,0 +1,257 @@
+{
+  "course_name": "算法设计与分析",
+  "chapter_id": "ch_913a66",
+  "chapter_title": "第3章 动态规划",
+  "task_instruction": "统一任务说明：每个任务需与大模型交互10次以上，每次交互字数不少于50字，至少包含三种不同交互方式，提交完整对话记录和学习心得。",
+  "tasks": [
+    {
+      "task_id": "task001",
+      "title": "动态规划基本思想与求解步骤的知识体系整理",
+      "task_type": "知识体系整理",
+      "related_knowledge_points": [
+        "kp001",
+        "kp004"
+      ],
+      "description": "同学们，今天我们来系统整理动态规划的核心思想与求解步骤。请你首先向大模型询问动态规划的基本思想是什么，并请其解释如何将问题分解为子问题、存储子问题解以避免重复计算。然后，结合求解步骤（分析最优解结构、递归定义最优值、自底向上计算、构造最优解）逐一追问每个步骤的具体含义和操作方法。请你在交互中表达自己对“自底向上”和“最优解结构”的理解，并请模型评判你的理解是否正确。此外，尝试猜想如果缺少某个步骤，求解过程会有什么后果。最后，整理出一个完整的知识体系图，包含动态规划思想、步骤、以及与其他算法（如分治）的关联。",
+      "inquiry_steps": [
+        "步骤1：向大模型询问动态规划的基本思想，并请其用一个简单例子（如斐波那契数列）说明问题分解和存储子问题解的过程。",
+        "步骤2：表达你对“自底向上”和“存储子问题解”的理解，请模型评判并补充遗漏点。",
+        "步骤3：依次询问动态规划四个求解步骤（分析最优解结构、递归定义最优值、自底向上计算、构造最优解）的具体含义和操作方法，对每一步进行追问。",
+        "步骤4：提出质疑：如果缺少“分析最优解结构”这一步，直接进行递归定义是否可行？用例子说明后果。",
+        "步骤5：整理出完整知识体系，并请模型检查体系是否全面。"
+      ],
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "min_words_per_round": 50,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "need_socratic_dialogue": false
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "reflection_min_words": 100,
+        "required_outputs": [
+          "知识总结",
+          "交互记录",
+          "学习反思"
+        ],
+        "specific_output": "提交一份动态规划思想与步骤的知识体系整理报告，包括：1）用思维导图或文字结构展示动态规划的核心思想、求解步骤及与分治算法的关系；2）与大模型交互的完整记录；3）不少于100字的学习反思，说明通过交互你如何深化了对动态规划整体框架的理解。"
+      },
+      "quality_check": {
+        "must_cover_core_knowledge": true,
+        "must_match_inquiry_learning": true,
+        "must_match_interaction_requirements": true
+      },
+      "editable": true,
+      "difficulty": "基础"
+    },
+    {
+      "task_id": "task002",
+      "title": "深度理解最优子结构与子问题重叠性质",
+      "task_type": "深度理解",
+      "related_knowledge_points": [
+        "kp002",
+        "kp003"
+      ],
+      "description": "同学们，动态规划的两个核心性质——最优子结构和子问题重叠——是理解和应用DP的关键。请先向大模型询问最优子结构的定义，并请它通过反证法证明为什么问题的最优解必须包含子问题的最优解。然后，请你说出一个你知道的满足最优子结构的问题（如矩阵连乘），请模型分析你的理解是否正确，并补充其他例子。接着，转向子问题重叠性质：询问如果没有子问题重叠，动态规划是否还有优势？请模型对比分治和DP在此情况下的性能。最后，请你提出一个批判性问题：是否存在满足最优子结构但不满足子问题重叠的问题？这样的问题是否适合用DP解决？通过这些深度互动，你将透彻理解这两个性质的内在关联和实际意义。",
+      "inquiry_steps": [
+        "步骤1：向大模型询问最优子结构的定义及其在动态规划中的重要性，并请其用反证法证明。",
+        "步骤2：请你给出一个自己想到的满足最优子结构的问题（例如二进制字符串的LCS变体），请模型判断并纠正。",
+        "步骤3：询问子问题重叠性质的定义，并与分治算法对比，理解子问题重叠对效率的影响。",
+        "步骤4：表达你的猜想：如果子问题不重叠，DP是否还有优势？请模型验证你的猜想并补充。",
+        "步骤5：提出质疑：存在满足最优子结构但不满足子问题重叠的问题吗？这样的问题是否应该用DP？请模型给出实例并分析。",
+        "步骤6：请模型总结两个性质的关系，并记录关键结论。"
+      ],
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "min_words_per_round": 50,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "need_socratic_dialogue": false
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "reflection_min_words": 100,
+        "required_outputs": [
+          "知识总结",
+          "交互记录",
+          "学习反思"
+        ],
+        "specific_output": "提交一份深度理解报告，包括：1）用你自己的语言对比解释最优子结构和子问题重叠的含义、重要性及相互关系；2）与大模型的完整对话记录；3）学习反思（不少于100字），重点说明通过批判性提问和交互，你对这两个性质的认识如何从模糊走向清晰。"
+      },
+      "quality_check": {
+        "must_cover_core_knowledge": true,
+        "must_match_inquiry_learning": true,
+        "must_match_interaction_requirements": true
+      },
+      "editable": true,
+      "difficulty": "中等"
+    },
+    {
+      "task_id": "task003",
+      "title": "最长公共子序列与矩阵连乘问题对比分析",
+      "task_type": "对比分析",
+      "related_knowledge_points": [
+        "kp005",
+        "kp006"
+      ],
+      "description": "同学们，最长公共子序列（LCS）和矩阵连乘（MCM）是动态规划的经典应用，但它们的递推关系、状态定义、求解目标各不相同。本次任务要求你向大模型分别询问LCS和MCM的递归定义、递推公式，以及如何利用最优子结构推导这些公式。然后，请你对比两者的异同：例如，LCS是求最大长度，MCM是求最小乘法次数；LCS的递推依赖于字符是否相等，MCM的递推依赖于划分点。请你表达自己对这两种问题求解思路的理解，并请模型进行评判。之后，尝试提出一个猜想：如果LCS不是求最大值，而是求满足某种约束的序列，递推公式会如何变化？请模型分析。最后，对比它们的时间复杂度（O(mn) vs O(n^3)），并思考为什么复杂度不同？通过对比，你将更深入地掌握动态规划的应用范式。",
+      "inquiry_steps": [
+        "步骤1：向大模型询问最长公共子序列问题的定义、递推关系及其推导。",
+        "步骤2：向大模型询问矩阵连乘问题的定义、递推关系及其推导。",
+        "步骤3：对比两者的异同，表达你的理解，请模型补充你遗漏的点。",
+        "步骤4：提出猜想：如果LCS问题修改为求“最长公共子串”而非“子序列”，递推公式如何变化？请模型分析。",
+        "步骤5：质疑：为什么LCS是O(mn)而MCM是O(n^3)？请模型从状态数量和转移角度解释。",
+        "步骤6：总结对比表格，并请模型检查准确性。"
+      ],
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "min_words_per_round": 50,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "need_socratic_dialogue": false
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "reflection_min_words": 100,
+        "required_outputs": [
+          "知识总结",
+          "交互记录",
+          "学习反思"
+        ],
+        "specific_output": "提交一份对比分析报告，包括：1）用表格对比LCS和MCM的问题定义、递推公式、状态表示、时间复杂度，并写出你的理解；2）与大模型对话的完整记录；3）学习反思（不少于100字），阐述通过对比分析，你如何更清晰地辨别动态规划在不同场景下的应用模式。"
+      },
+      "quality_check": {
+        "must_cover_core_knowledge": true,
+        "must_match_inquiry_learning": true,
+        "must_match_interaction_requirements": true
+      },
+      "editable": true,
+      "difficulty": "中等"
+    },
+    {
+      "task_id": "task004",
+      "title": "应用探究：0-1背包问题与备忘录方法的抉择",
+      "task_type": "应用探究",
+      "related_knowledge_points": [
+        "kp007",
+        "kp008"
+      ],
+      "description": "同学们，0-1背包问题是动态规划的经典应用，而备忘录方法提供了另一种实现思路。本次任务要求你通过与大模型交互，深入探究在解决0-1背包问题时，何时选择自底向上的DP，何时选择备忘录方法。首先，向大模型询问0-1背包问题的DP递推关系C[i][j]的具体含义和推导过程。接着，请模型解释备忘录方法如何用自顶向下的递归加表格存储实现。然后，请你提出一个应用场景：如果物品数量n很大（如n=1000），但背包容量W很小（如W=100），哪种方法更好？请模型给出时间复杂度分析并解释原因。你再追问：如果n和W都很大，但子问题重叠度较低，备忘录方法是否可能比DP更安全？请模型从实际计算角度分析。最后，请你质疑：备忘录方法本质上是递归，会不会有爆栈风险？该如何优化？通过这次应用探究，你将学会根据实际问题特点选择合适的动态规划实现策略。",
+      "inquiry_steps": [
+        "步骤1：向大模型询问0-1背包问题的DP递推关系C[i][j]的含义、推导过程及算法步骤。",
+        "步骤2：询问备忘录方法的实现方式（自顶向下递归+表格），并请其与DP自底向上进行对比。",
+        "步骤3：提出实际应用场景：n很大但W很小，请模型比较两种方法的时间复杂度和实际效率。",
+        "步骤4：表达你的猜想：当子问题重叠较少时，备忘录方法可能更优？请模型用实例验证或反驳。",
+        "步骤5：质疑备忘录方法的递归深度问题，并请教如何避免栈溢出。",
+        "步骤6：请模型总结在实际编程中如何选择DP与备忘录方法。"
+      ],
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "min_words_per_round": 50,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "need_socratic_dialogue": false
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "reflection_min_words": 100,
+        "required_outputs": [
+          "知识总结",
+          "交互记录",
+          "学习反思"
+        ],
+        "specific_output": "提交一份应用探究报告，包括：1）对比分析0-1背包问题中DP与备忘录方法的适用条件、复杂度、优缺点，并给出你的选择策略建议；2）与大模型的完整对话记录；3）学习反思（不少于100字），重点讲述通过应用场景讨论，你对动态规划实践选择的思考。"
+      },
+      "quality_check": {
+        "must_cover_core_knowledge": true,
+        "must_match_inquiry_learning": true,
+        "must_match_interaction_requirements": true
+      },
+      "editable": true,
+      "difficulty": "挑战"
+    },
+    {
+      "task_id": "task005",
+      "title": "苏格拉底式引导：从斐波那契数列自己推导出动态规划思想",
+      "task_type": "苏格拉底式引导",
+      "related_knowledge_points": [
+        "kp001",
+        "kp002"
+      ],
+      "description": "同学们，这次我们采用苏格拉底式对话，请大模型不要直接给你动态规划的定义或答案，而是通过一系列连续的追问，引导你从斐波那契数列的递归实现出发，自己发现动态规划的核心思想。开始对话时，请先告诉大模型你会先尝试用递归求解斐波那契数列，让它指出其中存在的问题（如重复计算）。接着，大模型应当继续追问：为什么会重复计算？如何解决？你是否想到了记录已经算过的值？这种记录会带来什么好处？然后，你可以尝试描述一种自底向上的计算顺序，大模型再引导你思考这个思路是否可以扩展到更复杂的问题（如LCS或背包）。整个过程中，你需要在每次回答后主动反思，并继续接受模型的追问，直到你能够总结出“存储子问题解、避免重复计算、自底向上求解”这一动态规划一般思想。最终，你需要独立总结出动态规划的适用条件和步骤。注意：大模型必须只提问，不给直接答案。",
+      "inquiry_steps": [
+        "步骤1：向大模型说明你想用递归求解斐波那契数列，请它指出其中的问题。",
+        "步骤2：在模型追问下，回答为什么会有重复计算，并思考解决方案。",
+        "步骤3：在模型引导下，尝试提出自底向上计算的方法，并说明好处。",
+        "步骤4：模型继续追问：这个思路能否用到其他问题？请尝试用一个简单例子（如硬币找零）进行类比。",
+        "步骤5：最后，在模型追问下，总结出动态规划的一般思想、适用条件和基本步骤。"
+      ],
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "min_words_per_round": 50,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "need_socratic_dialogue": true
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "reflection_min_words": 100,
+        "required_outputs": [
+          "知识总结",
+          "交互记录",
+          "学习反思"
+        ],
+        "specific_output": "提交一份苏格拉底式引导探究报告，包括：1）你通过模型追问独立推导出的动态规划思想、适用条件和求解步骤（用自己的话写，不少于200字）；2）与大模型的完整对话记录（显示模型只提问，不给答案）；3）学习反思（不少于100字），说明这种苏格拉底式引导如何帮助你深度内化了动态规划的本质。"
+      },
+      "quality_check": {
+        "must_cover_core_knowledge": true,
+        "must_match_inquiry_learning": true,
+        "must_match_interaction_requirements": true
+      },
+      "editable": true,
+      "difficulty": "挑战"
+    }
+  ],
+  "updated_at": "2026-06-03T16:36:54.153621"
+}

@@ -1,0 +1,68 @@
+{
+  "course_name": "算法设计与分析",
+  "chapter_title": "分治法",
+  "tasks": [
+    {
+      "task_id": "task001",
+      "title": "分治法知识体系整理",
+      "task_type": "知识整理",
+      "related_knowledge_points": [
+        "kp001",
+        "kp002"
+      ],
+      "description": "请围绕分治法的基本思想，整理其核心步骤，并结合归并排序说明分治过程。探究分治法的适用条件，思考什么样的问题适合用分治法解决。",
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "required_types": [
+          "询问",
+          "表达见解",
+          "审辨",
+          "猜想"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "guidance": "先从例子入手，逐步深入到本质"
+      },
+      "output_requirements": {
+        "word_limit": "500-800字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "format_hint": "结构化报告"
+      },
+      "editable": true,
+      "difficulty": "中等"
+    },
+    {
+      "task_id": "task002",
+      "title": "归并排序 vs 快速排序对比",
+      "task_type": "算法对比",
+      "related_knowledge_points": [
+        "kp002",
+        "kp003"
+      ],
+      "description": "深入对比归并排序和快速排序的算法思路、时间复杂度、空间复杂度和适用场景。通过与大模型多轮交互，探索两种算法的本质差异。",
+      "interaction_requirements": {
+        "min_rounds": 10,
+        "required_types": [
+          "询问",
+          "审辨",
+          "猜想",
+          "创新"
+        ],
+        "must_include_follow_up": true,
+        "must_include_questioning": true,
+        "guidance": "从具体例子开始比较"
+      },
+      "output_requirements": {
+        "word_limit": "600-900字",
+        "need_dialogue_record": true,
+        "need_learning_reflection": true,
+        "format_hint": "对比分析表格+文字说明"
+      },
+      "editable": true,
+      "difficulty": "挑战"
+    }
+  ],
+  "chapter_id": "ch03_demo",
+  "updated_at": "2026-06-01T08:35:01.390839"
+}
